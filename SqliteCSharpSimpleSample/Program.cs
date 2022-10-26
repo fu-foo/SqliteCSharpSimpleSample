@@ -46,24 +46,21 @@ namespace Fu.SqliteCSharpSimpleSample
 
 					// (5)トランザクションありのinsert
 					Console.WriteLine("■insert with transation");
-					var transaction = conn.BeginTransaction();
+					var tran = conn.BeginTransaction();
 
-					using (var command = conn.CreateCommand())
+					Console.WriteLine("■パラメーター指定のinsert");
+					cmd.CommandText = "insert into user(id, name, updttm) values(@id, @name, @updttm)";
+					cmd.Parameters.Add(new SQLiteParameter("@id", 4));
+					cmd.Parameters.Add(new SQLiteParameter("@name", "poco"));
+					cmd.Parameters.Add(new SQLiteParameter("@updttm", "2024-01-01"));
+					if (cmd.ExecuteNonQuery() != 1)
 					{
-						Console.WriteLine("■パラメーター指定のinsert");
-						command.CommandText = "insert into user(id, name, updttm) values(@id, @name, @updttm)";
-						command.Parameters.Add(new SQLiteParameter("@id", 4));
-						command.Parameters.Add(new SQLiteParameter("@name", "poco"));
-						command.Parameters.Add(new SQLiteParameter("@updttm", "2024-01-01"));
-						if (command.ExecuteNonQuery() != 1)
-						{
-							Console.WriteLine("■トランザクション失敗はロールバック");
-							transaction.Rollback();
-							return;
-						}
-						Console.WriteLine("■コミット");
-						transaction.Commit();
+						Console.WriteLine("■トランザクション失敗はロールバック");
+						tran.Rollback();
+						return;
 					}
+					Console.WriteLine("■コミット");
+					tran.Commit();
 
 					// (6)select
 					Console.WriteLine("■select");
