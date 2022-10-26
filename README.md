@@ -1,5 +1,4 @@
 # SqliteCSharpSimpleSample
-
 C#でSqliteを使って以下の操作を行うサンプルです。
 
 1．DB作成
