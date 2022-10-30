@@ -10,6 +10,9 @@ C#でSqliteを使って以下の操作を行うサンプルです。
 7. パラメーター指定のselect
 8. close
 
+詳しい説明はQiita上に書いています。
+https://qiita.com/__fu__/items/f02eb5a0758e3c911567
+
 # お断り
 
 Sqliteの操作理解用サンプルなので、エラー処理は皆無です。
