@@ -29,8 +29,7 @@ Sqliteの操作理解用サンプルなので、エラー処理は皆無です�
 
 package以下の中から環境に即したSQLite.Interop.dllを取得して、実行ファイルと同じ場所においてください。
 
-このプロジェクトは.Net4.6.2 AnyCPUで作成されているので
-プロジェクトのSqliteCSharpSimpleSample\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\x86 から取得して
+プロジェクトのSqliteCSharpSimpleSample\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\　からx86,x64フォルダーを中身ごとコピー
 
 デバッグであればexeの作成される
 プロジェクトのSqliteCSharpSimpleSample\SqliteCSharpSimpleSample\bin\Debug にコピーしてください。
